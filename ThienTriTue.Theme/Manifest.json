@@ -1,0 +1,7 @@
+{
+    "name": "ThienTriTue.Theme",
+    "description": "Giao diện Tailwind cho Thư Viện Tổng Hợp (Orchard Core)",
+    "type": "Theme",
+    "version": "1.0.0",
+    "tags": [ "tailwind", "orchard core", "blog" ]
+}

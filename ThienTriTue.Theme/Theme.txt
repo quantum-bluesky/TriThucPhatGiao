@@ -1,0 +1,6 @@
+Name: Thien Tri Tue Theme
+Author: Your Name
+Website: https://quantum-home.zapto.org
+Version: 1.0
+Description: Giao diện tùy chỉnh cho Thư Viện Tổng Hợp
+BaseTheme: TheAdmin

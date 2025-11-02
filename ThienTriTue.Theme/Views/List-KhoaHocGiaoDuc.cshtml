@@ -1,0 +1,85 @@
+@* ThienTriTue.Theme/Views/List-KhoaHocGiaoDuc.cshtml *@
+@model dynamic
+
+@{
+    // Thiết lập Title cho trang
+    ViewData["Title"] = "Khoa Học & Giáo Dục";
+}
+
+@section Header {
+    <header class="bg-blue-700 shadow-xl">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <a href="/" class="inline-flex items-center text-blue-200 hover:text-white mb-4 transition duration-150">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
+            <h1 class="text-4xl font-extrabold text-white tracking-tight">
+                Khoa Học & Giáo Dục
+            </h1>
+            <p class="mt-2 text-lg text-blue-200">
+                Chìa khóa mở cánh cửa tri thức.
+            </p>
+        </div>
+    </header>
+}
+
+<div>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2 border-blue-500">Các Bài Phân Tích & Blog Mới</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        @* Vùng này sẽ được thay thế bằng vòng lặp (loop) qua các bài viết động trong CMS *@
+        @* Tạm thời, chúng ta sẽ để lại 3 card mẫu để giữ giao diện *@
+        
+        <div class="bg-white rounded-xl shadow-md p-6 article-card transition duration-300 ease-in-out border-l-4 border-blue-500">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href="#" class="hover:text-blue-600 transition duration-150">Nghiên cứu Chiến lược PCTT áp dụng Công nghệ: Nhật Bản và Việt Nam</a>
+            </h3>
+            <p class="text-sm text-gray-500 mb-4">Ngày đăng: 29/10/2025 | Tác giả: ST</p>
+            <p class="text-gray-700">
+                Nghiên cứu So Sánh và Đề xuất Chiến lược Phát triển Hệ thống Cứu nạn và Cảnh báo Thiên tai áp dụng Công nghệ hiện đại
+            </p>
+            <p class="text-red-500 text-sm mt-1">Bài học từ Nhật Bản và Hiện trạng tại Việt Nam</p>
+            <a href="/giao-duc/nghien-cuu-pctt" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium text-sm transition duration-150">
+                Đọc tiếp &rarr;
+            </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 article-card transition duration-300 ease-in-out border-l-4 border-blue-500">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href="#" class="hover:text-blue-600 transition duration-150">5 Phương Pháp Học Tập Tích Cực Giúp Ghi Nhớ Sâu</a>
+            </h3>
+            <p class="text-sm text-gray-500 mb-4">Ngày đăng: 10/11/2024 | Tác giả: Gia An</p>
+            <p class="text-gray-700">
+                Phân tích các kỹ thuật học tập hiện đại như Spaced Repetition và Active Recall.
+            </p>
+            <a href="/giao-duc/phuong-phap-hoc-tap" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium text-sm transition duration-150">
+                Đọc tiếp &rarr;
+            </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 article-card transition duration-300 ease-in-out border-l-4 border-blue-500">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href="#" class="hover:text-blue-600 transition duration-150">Nghệ Thuật Quản Lý Thời Gian Theo Nguyên Tắc Eisenhower</a>
+            </h3>
+            <p class="text-sm text-gray-500 mb-4">Ngày đăng: 05/11/2024 | Tác giả: Trí Dũng</p>
+            <p class="text-gray-700">
+                Ứng dụng ma trận quan trọng - khẩn cấp để ưu tiên công việc và tránh trì hoãn.
+            </p>
+            <a href="/giao-duc/quan-ly-thoi-gian" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium text-sm transition duration-150">
+                Đọc tiếp &rarr;
+            </a>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md p-6 article-card transition duration-300 ease-in-out border-l-4 border-blue-500 flex items-center justify-center text-center">
+            <p class="text-gray-500 italic">... Tiếp tục thêm nội dung của bạn vào đây ...</p>
+        </div>
+
+    </div>
+
+    <div class="mt-12 flex justify-center">
+        <button class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-150">
+            Xem thêm các bài viết cũ
+        </button>
+    </div>
+</div>

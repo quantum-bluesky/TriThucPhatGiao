@@ -1,14 +1,20 @@
 // ThienTriTue.Web/Program.cs
 using OrchardCore.Logging;
+// using OrchardCore.Admin;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Thêm dịch vụ Orchard Core
+builder.Services.AddMvc();
+
 builder.Services
     .AddOrchardCore()
-    .AddMvc()
     .AddSetupFeatures("OrchardCore.AutoSetup") // Cho phép setup tự động nếu muốn
-    .AddSetupTheme("TheAgencyTheme"); // Tùy chọn, có thể dùng theme setup mặc định
+    .ConfigureServices(services =>
+    {
+        // To set the admin theme, configure it in appsettings.json under "OrchardCore_Admin": { "Theme": "TheAgencyTheme" }
+        // If you want to set it in code, use the correct property if available, otherwise remove this line.
+    });
 
 var app = builder.Build();
 
@@ -23,7 +29,13 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-// Sử dụng Orchard Core Middleware
+// BỔ SUNG QUAN TRỌNG: Cấu hình Middleware theo thứ tự chuẩn của ASP.NET Core 9.0
+// Routing phải được gọi trước Authentication/Authorization
+app.UseRouting();
+app.UseAuthentication(); // Thường được Orchard Core xử lý ngầm, nhưng nên thêm
+app.UseAuthorization();  // Dòng khắc phục lỗi chính!
+
+// Sử dụng Orchard Core Middleware - Phải được gọi sau Authorization
 app.UseOrchardCore();
 
 app.Run();

@@ -1,0 +1,54 @@
+@* ThienTriTue.Theme/Views/_Layout.cshtml *@
+@using OrchardCore.Admin.Services;
+@{
+    // Lấy thông tin cần thiết từ Layout
+    var pageTitle = await DisplayAsync(New.Title);
+    var fullTitle = pageTitle is string s && !string.IsNullOrEmpty(s) ? $"{s} - Thư Viện Tổng Hợp" : "Thư Viện Tổng Hợp Tri Thức & Tâm Linh";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@fullTitle</title>
+
+    <link rel="stylesheet" href="~/css/app.css" />
+
+    @await DisplayAsync(Model.Head)
+</head>
+<body class="antialiased min-h-screen">
+
+    @if (IsSectionDefined("Header"))
+    {
+        @RenderSection("Header", required: false)
+    }
+    else
+    {
+        <header class="bg-indigo-700 shadow-xl">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-extrabold text-white text-center tracking-tight">
+                    Thư Viện Tổng Hợp Tri Thức & An Lạc
+                </h1>
+                <p class="mt-1 text-base text-indigo-200 text-center">Nơi tổng hợp các bài viết về Giáo Dục, Phật Giáo và Luật Nhân Quả</p>
+            </div>
+        </header>
+    }
+
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        @await DisplayAsync(Model.Content)
+    </main>
+
+    @await DisplayAsync(Model.Footer)
+
+    <footer class="bg-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-400">
+                &copy; 2025 Thư Viện Tổng Hợp. Mọi quyền được bảo lưu.
+            </p>
+        </div>
+    </footer>
+
+    @await DisplayAsync(Model.Foot)
+</body>
+</html>

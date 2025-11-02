@@ -1,0 +1,57 @@
+@* ThienTriTue.Theme/Views/Home.cshtml - Đại diện cho Trang Chủ *@
+@model dynamic
+
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-10">
+
+    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col card-hover-effect">
+        <div class="flex items-center justify-center p-3 rounded-full bg-blue-500 w-16 h-16 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2" />
+            </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Khoa Học & Giáo Dục</h2>
+        <p class="text-gray-600 mb-6 flex-grow">
+            Tổng hợp những bài phân tích, blog về khoa học giáo dục.
+        </p>
+        <a href="/giao-duc" class="inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-md transition duration-150 ease-in-out">
+            Xem  Giáo Dục
+        </a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col card-hover-effect">
+        <div class="flex items-center justify-center p-3 rounded-full bg-purple-500 w-16 h-16 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" opacity="0.1"/>
+                <path d="M12 2v20M2 12h20M12 2a10 10 0 0 0-4.472 8.79l-1.04 4.38a1 1 0 0 0 1.944.46l.87-3.66A8 8 0 0 1 12 4a8 8 0 0 1 4.708 1.97l.87 3.66a1 1 0 0 0 1.944-.46l-1.04-4.38A10 10 0 0 0 12 2z"/>
+                <path d="M12 22a10 10 0 0 0 4.472-8.79l-1.04-4.38a1 1 0 0 0-1.944-.46l-.87 3.66A8 8 0 0 1 12 20a8 8 0 0 1-4.708-1.97l-.87-3.66a1 1 0 0 0-1.944.46l1.04 4.38A10 10 0 0 0 12 22z"/>
+            </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Phật Giáo & Chánh Pháp</h2>
+        <p class="text-gray-600 mb-6 flex-grow">
+            Các bài viết về giáo lý căn bản, thiền định, tư tưởng Phật giáo và cách ứng dụng Chánh Pháp vào đời sống hàng ngày.
+        </p>
+        <a href="/phat-giao" class="inline-block text-center bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg shadow-md transition duration-150 ease-in-out">
+            Xem  Phật Giáo
+        </a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col card-hover-effect">
+        <div class="flex items-center justify-center p-3 rounded-full bg-green-500 w-16 h-16 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="5" r="3" />
+                <path d="M12 22V8" />
+                <path d="M5 12H19" />
+                <path d="M12 8l-7 4M12 8l7 4" />
+            </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Câu Chuyện Nhân Quả & Đạo Lý</h2>
+        <p class="text-gray-600 mb-6 flex-grow">
+            Những câu chuyện có thật, phân tích và minh chứng về luật Nhân Quả, giúp người đọc hiểu và sống theo đạo đức truyền thống.
+        </p>
+        <a href="/nhan-qua" class="inline-block text-center bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg shadow-md transition duration-150 ease-in-out">
+            Xem  Nhân Quả
+        </a>
+    </div>
+
+</div>
