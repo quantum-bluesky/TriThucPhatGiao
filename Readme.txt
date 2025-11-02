@@ -36,6 +36,8 @@ dotnet add reference ../ThienTriTue.Theme/ThienTriTue.Theme.csproj
 Install TAILWINDCSS
 https://tailwindcss.com/docs/installation/tailwind-cli
 
+https://tailwindcss.com/docs/installation/using-postcss
+
 npm init -y
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
