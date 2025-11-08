@@ -1,0 +1,39 @@
+{
+  "name": "thientritue.theme",
+  "displayName": "Thiền Trí Tuệ Theme",
+  "description": "Cấu hình site sử dụng theme ThienTriTue và Tailwind CSS.",
+  "author": "Tri Thức Phật Giáo",
+  "website": "https://quantum-home.zapto.org",
+  "version": "1.0.0",
+  "issetuprecipe": true,
+  "categories": [ "default" ],
+  "tags": [ "tailwind", "thientritue" ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Admin",
+        "OrchardCore.Users",
+        "OrchardCore.Roles",
+        "OrchardCore.Media",
+        "ThienTriTue.Theme"
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "ThienTriTue.Theme"
+    },
+    {
+      "name": "settings",
+      "HomeRoute": {
+        "Action": "Index",
+        "Controller": "Home"
+      },
+      "LayerSettings": {
+        "Zones": [ "Content", "Footer" ]
+      }
+    }
+  ]
+}

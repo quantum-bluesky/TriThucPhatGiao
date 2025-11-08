@@ -5,6 +5,7 @@ module.exports = {
     "./Areas/**/*.{cshtml,js,html}",
     "./Views/**/*.{cshtml,js,html}",
     "./Pages/**/*.{cshtml,js,html}",
+    "../ThienTriTue.Theme/Views/**/*.{cshtml,js,html}",
     "./wwwroot/js/**/*.js",
     "./wwwroot/html/**/*.html" 
   ],
