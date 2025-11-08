@@ -416,3 +416,7 @@ FodyWeavers.xsd
 *.sln.iml
 /Publish_BukkenSecret/bin/*.pdb
 /publish
+# Orchard Core runtime and localization artifacts
+ThienTriTue.Web/App_Data/
+ThienTriTue.Web/Localization/
+ThienTriTue.Web/wwwroot/.placeholder
