@@ -1,9 +1,22 @@
-@* ThienTriTue.Theme/Views/_Layout.cshtml *@
-@using OrchardCore.Admin.Services;
+@* ThienTriTue.Theme/Views/Shared/_Layout.cshtml *@
 @{
     // Lấy thông tin cần thiết từ Layout
-    var pageTitle = await DisplayAsync(New.Title);
-    var fullTitle = pageTitle is string s && !string.IsNullOrEmpty(s) ? $"{s} - Thư Viện Tổng Hợp" : "Thư Viện Tổng Hợp Tri Thức & Tâm Linh";
+    var hasLayoutModel = Model is not null;
+    var headShape = hasLayoutModel ? Model?.Head : null;
+    var contentShape = hasLayoutModel ? Model?.Content : null;
+    var footerShape = hasLayoutModel ? Model?.Footer : null;
+    var footShape = hasLayoutModel ? Model?.Foot : null;
+    string? resolvedTitle = ViewContext?.ViewData?["Title"] as string;
+
+    if (string.IsNullOrWhiteSpace(resolvedTitle) && New is not null)
+    {
+        var titleShape = await DisplayAsync(New.Title);
+        resolvedTitle = titleShape?.ToString();
+    }
+
+    var fullTitle = !string.IsNullOrWhiteSpace(resolvedTitle)
+        ? $"{resolvedTitle} - Thư Viện Tổng Hợp"
+        : "Thư Viện Tổng Hợp Tri Thức & Tâm Linh";
 }
 
 <!DOCTYPE html>
@@ -15,7 +28,10 @@
 
     <link rel="stylesheet" href="~/css/app.css" />
 
-    @await DisplayAsync(Model.Head)
+    @if (headShape is not null)
+    {
+        @await DisplayAsync(headShape)
+    }
 </head>
 <body class="antialiased min-h-screen">
 
@@ -36,10 +52,20 @@
     }
 
     <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        @await DisplayAsync(Model.Content)
+        @if (contentShape is not null)
+        {
+            @await DisplayAsync(contentShape)
+        }
+        else
+        {
+            @RenderBody()
+        }
     </main>
 
-    @await DisplayAsync(Model.Footer)
+    @if (footerShape is not null)
+    {
+        @await DisplayAsync(footerShape)
+    }
 
     <footer class="bg-gray-800 mt-12">
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
@@ -49,6 +75,9 @@
         </div>
     </footer>
 
-    @await DisplayAsync(Model.Foot)
+    @if (footShape is not null)
+    {
+        @await DisplayAsync(footShape)
+    }
 </body>
 </html>
