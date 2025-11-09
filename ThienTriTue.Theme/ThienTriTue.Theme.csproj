@@ -22,9 +22,10 @@
     <PackageReference Include="OrchardCore.Theme.Targets" Version="2.2.1" />
   </ItemGroup>
 
-  <!-- Add this ItemGroup to copy .cshtml files to publish folder -->
+  <!-- Copy the Razor views both to the build output (bin) and publish folder -->
   <ItemGroup>
     <Content Include="Views\**\*.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <!-- If you have cshtml in other folders (e.g. root), include them too:
