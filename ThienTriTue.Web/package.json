@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --minify",
-    "watch:css": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --watch"
+    "build:css": "npx @tailwindcss/cli -i ./Styles/app.css -o ./wwwroot/css/app.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./Styles/app.css -o ./wwwroot/css/app.css --watch",
     "postcss:css": "gulp css"
   },
   "keywords": [],
@@ -21,7 +21,7 @@
     "tailwindcss": "^4.1.17"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.16",
+    "@tailwindcss/cli": "^4.1.17",
     "@tailwindcss/postcss": "^4.1.17",
     "baseline-browser-mapping": "^2.8.23",
     "browserslist": "^4.27.0",
