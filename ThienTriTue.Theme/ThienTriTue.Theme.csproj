@@ -7,6 +7,11 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+  </PropertyGroup>
+
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
@@ -15,6 +20,18 @@
     <PackageReference Include="OrchardCore.DisplayManagement" Version="2.2.1" />
     <PackageReference Include="OrchardCore.ResourceManagement" Version="2.2.1" />
     <PackageReference Include="OrchardCore.Theme.Targets" Version="2.2.1" />
+  </ItemGroup>
+
+  <!-- Add this ItemGroup to copy .cshtml files to publish folder -->
+  <ItemGroup>
+    <Content Include="Views\**\*.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <!-- If you have cshtml in other folders (e.g. root), include them too:
+    <Content Include="**\*.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    -->
   </ItemGroup>
 
 </Project>

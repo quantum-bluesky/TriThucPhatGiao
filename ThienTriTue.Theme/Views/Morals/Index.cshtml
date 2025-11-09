@@ -1,0 +1,75 @@
+@* ThienTriTue.Theme/Views/Morals/Index.cshtml *@
+@model dynamic
+
+@{
+    ViewData["Title"] = "Câu Chuyện Nhân Quả & Đạo Lý";
+}
+
+@section Header {
+    <!-- Header cho chuyên mục Nhân Quả (Màu Xanh Lá) -->
+    <header class="bg-green-700 shadow-xl">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <a href="/" class="inline-flex items-center text-green-200 hover:text-white mb-4 transition duration-150">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
+                Quay lại Trang Chủ
+            </a>
+            <h1 class="text-4xl font-extrabold text-white tracking-tight">
+                Câu Chuyện Nhân Quả & Đạo Lý
+            </h1>
+            <p class="mt-2 text-lg text-green-200">
+                Gieo nhân lành, gặt quả ngọt. Nơi chia sẻ những bài học sâu sắc về luật nhân quả trong cuộc sống.
+            </p>
+        </div>
+    </header>
+}
+
+<div>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2 border-green-500">Các Bài Viết Mới Nhất</h2>
+
+    <!-- Danh sách bài viết - Dạng lưới 2 cột trên desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        @* Vùng này sẽ được thay thế bằng vòng lặp dữ liệu động từ Orchard Core *@
+
+        <!-- Bài viết mẫu 1: Lòng biết ơn -->
+        <div class="bg-white rounded-xl shadow-md p-6 article-card transition duration-300 ease-in-out border-l-4 border-green-500">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href="/nhan-qua/long-biet-on" class="hover:text-green-600 transition duration-150">Sức Mạnh Của Lòng Biết Ơn - Nhân Nào Quả Đó</a>
+            </h3>
+            <p class="text-sm text-gray-500 mb-4">Ngày đăng: 15/10/2024 | Tác giả: An Lạc</p>
+            <p class="text-gray-700">
+                Phân tích cách thái độ biết ơn tạo ra những kết quả tích cực trong đời sống, thu hút phước lành theo luật nhân quả.
+            </p>
+            <a href="/nhan-qua/long-biet-on" class="mt-4 inline-block text-green-600 hover:text-green-800 font-medium text-sm transition duration-150">
+                Đọc tiếp &rarr;
+            </a>
+        </div>
+
+        <!-- Bài viết mẫu 2: Người lái đò -->
+        <div class="bg-white rounded-xl shadow-md p-6 article-card transition duration-300 ease-in-out border-l-4 border-green-500">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href="/nhan-qua/nguoi-lai-do" class="hover:text-green-600 transition duration-150">Câu Chuyện Về Người Lái Đò Và Hạt Giống Thiện Lương</a>
+            </h3>
+            <p class="text-sm text-gray-500 mb-4">Ngày đăng: 01/09/2024 | Tác giả: Minh Tuệ</p>
+            <p class="text-gray-700">
+                Bài học về sự cho đi vô tư và những quả ngọt bất ngờ đến từ những hành động nhỏ bé nhưng chân thành.
+            </p>
+            <a href="/nhan-qua/nguoi-lai-do" class="mt-4 inline-block text-green-600 hover:text-green-800 font-medium text-sm transition duration-150">
+                Đọc tiếp &rarr;
+            </a>
+        </div>
+
+        <!-- Vùng Placeholder -->
+        <div class="bg-white rounded-xl shadow-md p-6 article-card transition duration-300 ease-in-out border-l-4 border-green-500 flex items-center justify-center text-center">
+            <p class="text-gray-500 italic">... Tiếp tục thêm nội dung của bạn vào đây ...</p>
+        </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-12 flex justify-center">
+        <button class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-150">
+            Xem thêm các bài viết cũ
+        </button>
+    </div>
+</div>
