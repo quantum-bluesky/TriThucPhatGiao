@@ -35,6 +35,12 @@
 </head>
 <body class="antialiased min-h-screen">
 
+    @{
+        Microsoft.AspNetCore.Html.IHtmlContent? bodyContent = RenderBody();
+        string? bodyContentString = bodyContent?.ToString();
+        Microsoft.AspNetCore.Html.IHtmlContent? headerSection = await RenderSectionAsync("Header", required: false);
+    }
+
     <header class="bg-indigo-700 shadow-xl">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-extrabold text-white text-center tracking-tight">
@@ -44,10 +50,10 @@
         </div>
     </header>
 
-    @if (IsSectionDefined("Header"))
+    @if (headerSection is not null)
     {
         <section aria-label="Header của chuyên mục" class="border-b border-gray-200">
-            @RenderSection("Header", required: false)
+            @headerSection
         </section>
     }
 
@@ -56,9 +62,9 @@
         {
             @await DisplayAsync(contentShape)
         }
-        else
+        else if (!string.IsNullOrWhiteSpace(bodyContentString))
         {
-            @RenderBody()
+            @bodyContent
         }
     </main>
 
