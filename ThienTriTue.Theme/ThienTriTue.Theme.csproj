@@ -23,16 +23,5 @@
   </ItemGroup>
 
   <!-- Copy the Razor views both to the build output (bin) and publish folder -->
-  <ItemGroup>
-    <Content Include="Views\**\*.cshtml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <!-- If you have cshtml in other folders (e.g. root), include them too:
-    <Content Include="**\*.cshtml">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    -->
-  </ItemGroup>
 
 </Project>

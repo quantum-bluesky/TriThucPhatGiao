@@ -8,7 +8,7 @@ namespace ThienTriTue.Theme.Controllers;
 public class HomeController : Controller
 {
     // Dùng root ~/Views để phù hợp với view lookup của Razor/OrchardCore (embedded/compiled views)
-    private const string ThemeRoot = "~/Views";
+    private const string ThemeRoot = "~/ThienTriTue.Theme/Views";
 
     [HttpGet("/")]
     public IActionResult Index() => View($"{ThemeRoot}/Home/Index.cshtml");
