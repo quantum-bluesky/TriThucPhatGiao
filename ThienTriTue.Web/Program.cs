@@ -21,3 +21,5 @@ app.UseStaticFiles();
 app.UseOrchardCore();
 
 await app.RunAsync();
+
+public partial class Program;
