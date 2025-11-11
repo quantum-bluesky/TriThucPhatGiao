@@ -1,16 +1,16 @@
 @* ThienTriTue.Theme/Views/Shared/_Layout.cshtml *@
 @{
     // Lấy thông tin cần thiết từ Layout
-    var hasLayoutModel = Model is not null;
+    var hasLayoutModel = Model != null;
     var headShape = hasLayoutModel ? Model?.Head : null;
     var contentShape = hasLayoutModel ? Model?.Content : null;
     var footerShape = hasLayoutModel ? Model?.Footer : null;
     var footShape = hasLayoutModel ? Model?.Foot : null;
     string? resolvedTitle = ViewContext?.ViewData?["Title"] as string;
 
-    if (string.IsNullOrWhiteSpace(resolvedTitle) && New is not null)
+    if (string.IsNullOrWhiteSpace(resolvedTitle) && New != null)
     {
-        var titleShape = await DisplayAsync(New.Title);
+        var titleShape = await DisplayAsync(New!.Title);
         resolvedTitle = titleShape?.ToString();
     }
 
@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" href="~/css/app.css" />
 
-    @if (headShape is not null)
+    @if (headShape != null)
     {
         @await DisplayAsync(headShape)
     }
@@ -50,7 +50,7 @@
         </div>
     </header>
 
-    @if (headerSection is not null)
+    @if (headerSection != null)
     {
         <section aria-label="Header của chuyên mục" class="border-b border-gray-200">
             @headerSection
@@ -58,7 +58,7 @@
     }
 
     <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        @if (contentShape is not null)
+        @if (contentShape != null)
         {
             @await DisplayAsync(contentShape)
         }
@@ -68,7 +68,7 @@
         }
     </main>
 
-    @if (footerShape is not null)
+    @if (footerShape != null)
     {
         @await DisplayAsync(footerShape)
     }
@@ -81,7 +81,7 @@
         </div>
     </footer>
 
-    @if (footShape is not null)
+    @if (footShape != null)
     {
         @await DisplayAsync(footShape)
     }
